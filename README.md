@@ -1,15 +1,36 @@
 # TaskTracker
-TaskTracker is a lightweight and user-friendly to-do list application built with Flask. It allows you to quickly add, update, complete, and delete tasks with ease. Designed with simplicity in mind, it uses Python, HTML, CSS, and Bootstrap to deliver a clean, responsive interface — all without requiring any login or user accounts. Perfect for managing everyday tasks in a fast and clutter-free way.
-<br>
+
+TaskTracker is a simple and elegant **Flask-based To-Do List web application** that lets you add, update, mark complete, and delete tasks effortlessly.  
+Designed with a clean UI using **HTML and Bootstrap**, it is perfect for beginners learning full-stack development with Flask.
+
+---
+
+## 📌 Features
+
+- ➕ Add new tasks  
+- 📝 Edit and update existing tasks  
+- ✅ Mark tasks as completed  
+- ❌ Delete tasks  
+- 📅 Add due dates  
+- 📱 Responsive Bootstrap UI  
+- 🔧 Powered by Flask + SQLAlchemy (SQLite database)
+
+---
+
 ## 🛠️ Tech Stack
 
-<b>Frontend</b><br>
-🎨 HTML5 – Page structure<br>
-🎭 CSS3 – Styling and design<br>
-📱 Bootstrap 5 – Responsive UI components
+**Frontend**
+- HTML5   
+- Bootstrap 5  
 
-<b>Backend</b>
-<br>
-🐍 Python – Core application logic
-<br>
-🌐 Flask – Web framework for routing, rendering, and server-side handling
+**Backend**
+- Python  
+- Flask  
+- Flask-SQLAlchemy (SQLite)
+
+**Deployment**
+- Render (with Procfile + requirements.txt)
+
+---
+
+
