@@ -13,6 +13,10 @@
             <label for="desc" class="form-label">Description</label>
             <input type="text" class="form-control" value="{{task.desc}}" name="desc" id="desc">
         </div>
+        <div class="mb-3">
+            <label for="due_date" class="form-label">Due Date</label>
+            <input type="date" class="form-control" value="{{task.due_date}}" name="due_date" id="due_date">
+        </div>
 
         <button type="submit" class="btn btn-success">Update</button>
     </form>

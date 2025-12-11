@@ -14,7 +14,8 @@ class TaskTracker(db.Model):
     sno = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(200), nullable=False)
     desc = db.Column(db.String(500), nullable=False)
-    date_created = db.Column(db.DateTime, default=datetime.today().date())
+    due_date = db.Column(db.Date)
+
 
     def __repr__(self) -> str:
         return f"{self.sno} - {self.title}"
@@ -27,7 +28,9 @@ def home():
     if request.method=='POST':
         title=request.form['title']
         desc=request.form['desc']
-        task_tracker=TaskTracker(title=title,desc=desc)
+        due_date_str=request.form['due_date']
+        due_date=datetime.strptime(due_date_str, '%Y-%m-%d').date()
+        task_tracker=TaskTracker(title=title,desc=desc,due_date=due_date)
         db.session.add(task_tracker)
         db.session.commit()
     all_tasks=TaskTracker.query.all()
@@ -38,9 +41,12 @@ def update(sno):
     if request.method=='POST':
         title=request.form['title']
         desc=request.form['desc']
+        due_date_str=request.form['due_date']
+        due_date=datetime.strptime(due_date_str, '%Y-%m-%d').date()
         task=TaskTracker.query.filter_by(sno=sno).first()
         task.title=title
         task.desc=desc
+        task.due_date=due_date
         db.session.add(task)
         db.session.commit()
         return redirect("/")
